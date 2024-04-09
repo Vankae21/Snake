@@ -27,6 +27,8 @@ const char* data_path = "player.txt";
 
 Font font; 
 Sound btn_sound;
+Sound hit_sound;
+Sound eat_sound;
 
 Button* start_btn = (void*)0;
 Button* replay_btn = (void*)0;
@@ -76,6 +78,9 @@ void init()
 	font = LoadFontEx("assets/JOYSTIX_MONOSPACE.otf", 64, (void*)0, 300);
 
 	btn_sound = LoadSound("assets/blipSelect.wav");
+	hit_sound = LoadSound("assets/hitHurt.wav");
+	eat_sound = LoadSound("assets/powerUp.wav");
+
 
 	int btn_y = HEIGHT - 192 + 64;
 
@@ -103,6 +108,7 @@ void update()
 
 		if(snake->bodies[0]->i == food->i && snake->bodies[0]->j == food->j)
 		{
+			PlaySound(eat_sound);
 			enlarge_snake(snake);
 			replace_food(food, snake);
 			cur_score++;
@@ -138,6 +144,7 @@ void update()
 	{
 		if(snake->bodies[0]->i == snake->bodies[i]->i && snake->bodies[0]->j == snake->bodies[i]->j)
 		{
+			PlaySound(hit_sound);
 			lose = true;
 			if(cur_score > high_score)
 			{
