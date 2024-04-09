@@ -91,7 +91,6 @@ void update()
 {	
 
 	// UI
-	PlaySound(btn_sound);
 	if(!is_started)
 	{
 		if(is_button_pressed(start_btn))
