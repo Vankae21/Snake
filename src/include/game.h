@@ -9,7 +9,7 @@
 #define COLS 16
 #define WIDTH COLS * TILE_SIZE
 #define HEIGHT (ROWS * TILE_SIZE + 192)
-#define TITLE "GEYM"
+#define TITLE "Snake"
 #define FPS 60
 
 extern Sound btn_sound;

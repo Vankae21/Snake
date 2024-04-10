@@ -3,7 +3,7 @@
 SRC_DIR="src"
 INCLUDE_DIR="$SRC_DIR/include"
 OBJ_DIR="objects"
-C_FLAGS=" -L/usr/lib -lraylib -lopengl32 -lgdi32 -lwinmm"
+C_FLAGS=" -Lwin-raylib/lib -Iwin-raylib/include -lraylib -lopengl32 -lgdi32 -lwinmm"
 CC=x86_64-w64-mingw32-gcc
 
 mkdir -p $OBJ_DIR
@@ -15,5 +15,3 @@ done
 $CC $OBJ_DIR/*.o -o main.exe $C_FLAGS
 
 rm -r $OBJ_DIR
-
-

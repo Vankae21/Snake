@@ -1,6 +1,6 @@
 #ifndef BUTTON_H
 #define BUTTON_H
-#include "raylib.h"
+#include <raylib.h>
 #include "game.h"
 
 typedef struct
